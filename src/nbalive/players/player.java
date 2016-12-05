@@ -15,10 +15,18 @@ public class player {
     private String age = "";
     private int mSkill;
     
-    public player() {
-        age = String.valueOf(intUtils.getRandomNumBetween(19, 34));
-        mSkill = intUtils.getRandomNumBetween(0, 100);
+    public player(int skill) {
+        age = String.valueOf(generateAge());
+        mSkill =  skill;        
         mName = getRandomPlayer();
+    }
+    
+    private static int generateSkills() {
+        return intUtils.getRandomNumBetween(70, 100);
+    }
+    
+    private int generateAge() {
+        return intUtils.getRandomNumBetween(19, 34);
     }
     
     public String getName() {

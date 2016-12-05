@@ -8,6 +8,7 @@ import java.util.*;
 
 import nbalive.utils.intUtils;
 import nbalive.players.player;
+import nbalive.players.benchPlayer;
 
 
 /**
@@ -18,7 +19,7 @@ public class team {
     private String mTeamName = "";
     private String mMascot = "";
     private int teamScore;
-    private final int teamSize = 5;
+    private final int teamSize = 10;
     player[] players = new player[teamSize];
     private String[] mascotArray = {"bear", "cat", "dolphin"};
     
@@ -30,8 +31,12 @@ public class team {
     }
     
     public void putPlayersOnTeam() {
-        for (int i = 0; i < teamSize; i++) {
-            players[i] = new player();
+        for (int i = 0; i < 5; i++) {
+            players[i] = new player(intUtils.getRandomNumBetween(70, 97));
+        }
+        
+        for (int i = 5; i < 10; i++) {
+            players[i] = new benchPlayer();
         }
     }
     
